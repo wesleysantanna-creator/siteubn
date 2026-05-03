@@ -1,19 +1,81 @@
-import Woman from "../../public/images/black-woman-illustration.svg"
-import WhiteFlower from "../../public/images/white-flower.svg"
-import Partners from "../../public/images/partners.png"
+import Woman from "/images/black-woman-illustration.svg"
+import Man from "/images/black-man-illustration.svg"
+import Whats from "/icons/social_medias/whats.svg"
+import WhiteFlower from "/images/white-flower.svg"
+import Partners from "/images/partners.png"
 
-import { TestimonialCard } from "../components/Testimonial";
-import { HeroCarousel } from "../components/HeroCarousel";
-import { Accordion } from "../components/Accordion";
+import { TestimonialCard } from "../components/Testimonial"
+import { HeroCarousel } from "../components/HeroCarousel"
+import { Accordion, type AccordionItem } from "../components/Accordion"
+import { FastTimeline } from "../components/FastTimeline"
+import Contact from "../components/Contact"
+import Footer from "../components/Footer"
+
+const itemsImpact: AccordionItem[] = [
+    {
+        id: '01',
+        title: 'Mentoria de Carreia',
+        content: 'Oferecemos orientações individuais e personalizadas aos nossos membros, apoiando nas decisões de carreira e nos processos de preparação'
+    },
+    {
+        id: '02',
+        title: 'Preparação de Currículo',
+        content: 'Auxiliamos nossos talentos no detalhamento de suas habilidades e experiências para que se destaquem nas avaliações das empresas'
+    },
+    {
+        id: '03',
+        title: 'Networking com Empresas',
+        content: 'Alavancamos conexões para abrirmos portas e oferecermos insights valiosos relacionados às vagas e empresas de interesse dos nossos membros'
+    },
+    {
+        id: '04',
+        title: 'Formações de Soft Skills',
+        content: 'Desenvolvemos iniciativas e treinamentos que auxiliem no aprimoramento de habilidades de comunicação, liderança e trabalho em equipe'
+    },
+    {
+        id: '05',
+        title: 'Cursos de Idiomas',
+        content: 'Financiamos cursos de idiomas (em especial o inglês) para ampliar os horizontes e aumentar a empregabilidade dos nossos membros'
+    },
+    {
+        id: '06',
+        title: 'Treinamento de Finanças',
+        content: 'Patrocinamos cursos de finanças corporativas, contabilidade e outros conceitos importantes na preparação e no sucesso dos nossos membros no mercado de trabalho'
+    },
+];
+
+const itemsFaq: AccordionItem[] = [
+    {
+        id: '01',
+        title: 'Como posso financiar a UBN enquanto empresa?',
+        content: 'Como empresa interessada, você pode entrar em contato conosco pelo e-mail ubn@redeubn.org com o assunto “Quero ser parceiro” e um corpo explicando o que sua empresa faz. Entraremos em contato com detalhes dos planos que temos disponíveis.'
+    },
+    {
+        id: '02',
+        title: 'Quando acontece o Encontro UBN?',
+        content: 'O encontro costuma acontecer anualmente, durante o mês de junho. Neste ano, 2026, ele vai acontecer no dia 3. Para mais informações acesse o sympla clicando aqui'
+    },
+    {
+        id: '03',
+        title: 'Quem pode participar do Encontro UBN? Existe algum requisito?',
+        content: 'Não existem pré-requisitos para participar do encontro, o evento é voltado para todo o público negro (que engloba pretos, pardos e indígenas) que desejam ingressar no mundo corporativo ou crescer na carreira'
+    },
+    {
+        id: '04',
+        title: 'Já me formei na faculdade mas tenho interesse em ser parte da UBN, como faço?',
+        content: 'Mesmo formado, você pode ser parte da comunidade ou time UBN, para isso, entre em contato conosco usando o formulário acima ou pelo nosso Whatsapp, clicando aqui'
+    },
+];
+
 
 export default function Home() {
+
+
+
     return (
         <>
-
             <HeroCarousel />
-
-
-            <div className="flex flex-col px-[9.4%] mt-[9.4%]">
+            <div className="flex flex-col px-[9.4%] pt-[9.4%]" id="quemsomos">
                 <div className="flex flex-col xl:flex-row gap-12 items-end">
                     <div className="w-full text-base leading-6.5 text-justify tracking-[0.01em]">
                         <h1 className="text-5xl mb-8 font-bold text-medium-black">Quem <span className="text-blue">Somos</span></h1>
@@ -67,23 +129,23 @@ export default function Home() {
 
                 </div>
             </div>
-            <div className="flex px-[9.4%] py-28 mt-[9.4%] gap-12 relative bg-yellow h-208 justify-between">
+            <div className="flex flex-col xl:flex-row px-[9.4%] py-28 mt-[9.4%] gap-12 relative bg-yellow md:h-208 justify-between" id="nossasacoes">
                 <div className="max-w-124">
                     <h1 className="font-semibold text-[48px] leading-16 text-black mb-9">Nossas principais ações e iniciativas</h1>
                     <p className="text-[20px] text-black leading-7.5">Somos comprometidos com o desenvolvimento dos nossos talentos,
                         com <span className="font-bold">foco na excelência</span> e no sucesso de suas carreiras.</p>
                 </div>
-                <Accordion />
+                <Accordion items={itemsImpact}/>
                 <img src={WhiteFlower} className="absolute bottom-0 opacity-20 left-12" />
             </div>
-            <div className="flex flex-col px-[9.4%] mt-[9.4%]">
+            <div className="flex flex-col px-[9.4%] mt-[9.4%]" id="impactos">
                 <h1 className="font-semibold text-[48px] leading-16 text-black mb-4">Impactos gerados</h1>
                 <p className="text-[20px] text-black leading-7.5 max-w-177.5 mb-16">Nos orgulhamos por termos apoiado diversos
-                    <span className="font-bold">casos de sucesso dos nossos membros</span> em processos seletivos altamente
+                    <span className="font-bold"> casos de sucesso dos nossos membros</span> em processos seletivos altamente
                     competitivos</p>
                 <TestimonialCard />
             </div>
-            <div className="flex flex-col items-center justify-center mt-[9.4%]">
+            <div className="flex flex-col items-center justify-center mt-[9.4%]" id="parceiros">
                 <p className="text-[28px] leading-9.25 max-w-175 text-center">Atingimos esses resultados através de <b>parcerias com grandes empresas</b></p>
                 <div className="w-full bg-white py-12 overflow-hidden relative">
                     <style>{`
@@ -110,6 +172,29 @@ export default function Home() {
                     <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-linear-to-l from-white to-transparent"></div>
                 </div>
             </div>
+
+            <FastTimeline />
+            <Contact />
+
+            <div className="flex px-[9.4%] py-28 mt-[9.4%] gap-12 relative h-208 justify-between" id="faq">
+                <div className="max-w-124">
+                    <h1 className="font-semibold text-[48px] leading-16 text-black mb-9">FAQ</h1>
+                    <p className="text-[20px] text-black leading-7.5">Conferiu todas as informações e mesmo assim ficou alguma dúvida?
+                        Confira nesse FAQ, ela pode ser uma questão recorrente por aqui. E, caso não encontre a informação,
+                        <span className="font-bold"> entre em contato conosco!</span></p>
+                </div>
+                <Accordion items={itemsFaq} />
+                <img src={Man} className="absolute left-28 bottom-[calc(9.4%+20px)]" />
+            </div>
+
+            <a
+                href="https://web.whatsapp.com/send?phone=5511958260879&text=Ola,+vim+pelo+site!"
+                className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-blue rounded-full shadow-2xl flex items-center justify-center hover:bg-darkblue hover:scale-110 active:scale-95 transition-all duration-300 group"
+            >
+                <img src={Whats} className="w-8 h-auto" />
+            </a>
+
+            <Footer />
         </>
     );
 }

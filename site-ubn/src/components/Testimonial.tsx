@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Back from "../../public/icons/arrow_back.svg"
+import Next from "../../public/icons/arrow_next.svg"
 
 interface Testimonial {
     id: number;
@@ -54,10 +56,10 @@ export const TestimonialCard = () => {
 
             <div className="flex flex-col justify-between grow pl-9 pb-6 pr-8 pt-9">
                 <div>
-                    <h2 className="text-[32px] font-bold leading-tight text-black mb-4">
+                    <h2 className="text-[28px] font-medium leading-9 text-black mb-6 md:max-w-[60%]">
                         {current.quote}
                     </h2>
-                    <p className="text-medium-black text-[20px]">
+                    <p className="text-medium-black text-[20px] md:max-w-[90%]">
                         {current.description}
                     </p>
                 </div>
@@ -68,18 +70,18 @@ export const TestimonialCard = () => {
                         <p className="text-gray-400 font-medium">{current.role}</p>
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-2">
                         <button
                             onClick={prevSlide}
-                            className="w-12 h-12 rounded-full bg-[#7a2b1c] flex items-center justify-center text-white hover:brightness-110 transition-all"
+                            className="w-12 h-12 rounded-full cursor-pointer bg-[#7a2b1c] flex items-center justify-center text-white hover:bg-darkbrown transition-all"
                         >
-                            anterior
+                            <img src={Back} />
                         </button>
                         <button
                             onClick={nextSlide}
-                            className="w-12 h-12 rounded-full bg-[#7a2b1c] flex items-center justify-center text-white hover:brightness-110 transition-all"
+                            className="w-12 h-12 rounded-full cursor-pointer bg-[#7a2b1c] flex items-center justify-center text-white hover:bg-darkbrown transition-all"
                         >
-                            próximo
+                            <img src={Next} />
                         </button>
                     </div>
                 </div>

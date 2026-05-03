@@ -7,24 +7,21 @@ interface BannerSlide {
     id: number;
     title: string;
     subtitle: string;
-    buttonText: string;
     imageUrl: string;
 }
 
 const slides: BannerSlide[] = [
     {
         id: 1,
-        title: "Unindo & fortalecendo lideranças negras",
-        subtitle: "Junte-se à Unicamp Black Network e faça parte de uma comunidade que promove a equidade, capacita jovens líderes e transforma o futuro.",
-        buttonText: "Faça parte",
+        title: "Unindo & fortalecendo <span style='color: #F49F27;'>lideranças negras</span>",
+        subtitle: "Junte-se à Unicamp Black Network e faça parte de uma comunidade que <span style='color: #F49F27;font-weight:700'>promove a equidade, capacita jovens líderes e transforma o futuro.</span>",
         imageUrl: "../../public/images/team-group.png"
     },
     {
         id: 2,
-        title: "Conecte-se com Empresas",
-        subtitle: "Networking real que gera oportunidades de impacto.",
-        buttonText: "Ver Vagas",
-        imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1280"
+        title: "Participe do <span style='color: #F49F27;'>Encontro com UBN 2026</span>",
+        subtitle: "Venha fazer networking na maior feira negra de carreiras do país, que ocorrerá no dia 3 de junho de 2026, na Unicamp. <span style='color: #F49F27;font-weight:700;'><a href='https://www.sympla.com.br/evento/encontro-com-ubn-2026/3332320'>Para mais informações e inscrições, clique aqui</a></span>",
+        imageUrl: "../../public/images/banner-encontro.png"
     },
 ];
 
@@ -40,7 +37,6 @@ export const HeroCarousel = () => {
         setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     };
 
-    // Opcional: Auto-play (muda de slide sozinho a cada 5 segundos)
     useEffect(() => {
         const timer = setInterval(() => {
             nextSlide();
@@ -50,29 +46,27 @@ export const HeroCarousel = () => {
     const current = slides[currentIndex];
 
     return (
-        <div className="relative w-full h-[768px] overflow-hidden">
+        <div className="relative w-full h-192 overflow-hidden" id="inicio">
 
             <div
-                className="w-full h-full bg-cover bg-center transition-all duration-700 ease-in-out flex items-center justify-center"
+                className="w-full h-full bg-cover bg-center transition-all duration-700 ease-in-out flex items-end p-[9.4%]"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${current.imageUrl})`
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url(${current.imageUrl})`
                 }}
             >
-                {/* Conteúdo Centralizado */}
-                <div className="text-center text-white px-4 max-w-3xl">
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeIn">
-                        {current.title}
-                    </h1>
-                    <p className="text-xl md:text-2xl mb-8 opacity-90">
-                        {current.subtitle}
-                    </p>
-                    <button className="bg-yellow text-black px-8 py-4 rounded-full font-bold text-lg hover:brightness-110 transition-all">
-                        {current.buttonText}
-                    </button>
+                <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end text-white w-full gap-6">
+                    <h1
+                        className="text-[32px] md:text-[48px] font-bold animate-fadeIn w-full max-w-xl leading-tight text-left"
+                        dangerouslySetInnerHTML={{ __html: current.title }}
+                    />
+                    <p
+                        className="text-[18px] opacity-90 leading-relaxed text-right w-full max-w-[80%] mt-8 md:mt-0 md:max-w-110 self-end xl:self-auto"
+                        dangerouslySetInnerHTML={{ __html: current.subtitle }}
+                    />
+
                 </div>
             </div>
 
-            {/* Botões de Navegação */}
             <button
                 onClick={prevSlide}
                 className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all"
