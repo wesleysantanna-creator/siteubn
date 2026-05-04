@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
         role: "Analista na Amazon",
         quote: "O UBN segue me inspirando e me impulsionando a ir mais longe",
         description: "Fui participante, integrante e hoje faço parte da liderança. O UBN segue me inspirando e me impulsionando a ir mais longe. Foi onde aprendi a acreditar em mim, a crescer com propósito e a alcançar minha efetivação na Amazon BR.",
-        image: "../../public/images/impacto/dantas.png"
+        image: "/images/impacto/dantas.png"
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
         role: "Estágio Unilever",
         quote: "Ver histórias como a minha me deu forças para buscar meus objetivo",
         description: "Participar do UBN é transformador. Ver histórias como a minha me deu forças para buscar meus objetivo. Conquistar meus estágios foi uma grande vitória, mas sei que nada disso seria possível sem o suporte, a ajuda e o incentive constante que recebi no UBN.",
-        image: "../../public/images/impacto/ana.png"
+        image: "/images/impacto/ana.png"
     },
     // {
     //     id: 3,
