@@ -2,21 +2,18 @@ import { useState } from 'react';
 import Plus from "../../public/icons/plus.svg";
 import Minus from "../../public/icons/minus.svg";
 
-// 1. Exportamos a interface para que possa ser usada em outros lugares
 export interface AccordionItem {
     id: string;
     title: string;
     content: string;
 }
 
-// 2. Criamos a interface para as Props do componente
 interface AccordionProps {
     items: AccordionItem[];
-    initialOpenId?: string | null; // Opcional: permite definir qual começa aberto
+    initialOpenId?: string | null; 
 }
 
 export const Accordion = ({ items, initialOpenId = '01' }: AccordionProps) => {
-    // Estado inicializado com a prop opcional
     const [openId, setOpenId] = useState<string | null>(initialOpenId);
 
     const toggleItem = (id: string) => {
@@ -24,7 +21,7 @@ export const Accordion = ({ items, initialOpenId = '01' }: AccordionProps) => {
     };
 
     return (
-        <div className="w-full max-w-157 mx-auto border-black">
+        <div className="w-full max-w-157 mx-auto border-black z-10">
             {items.map((item) => (
                 <div key={item.id} className="border-b border-black">
                     <button
@@ -46,9 +43,7 @@ export const Accordion = ({ items, initialOpenId = '01' }: AccordionProps) => {
                             openId === item.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
                         }`}
                     >
-                        <p className="pb-6 pr-12 text-base pl-9">
-                            {item.content}
-                        </p>
+                        <p className="pb-6 pr-12 text-base pl-9" dangerouslySetInnerHTML={{ __html: item.content }} />
                     </div>
                 </div>
             ))}

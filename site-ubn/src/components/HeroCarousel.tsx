@@ -13,15 +13,15 @@ interface BannerSlide {
 const slides: BannerSlide[] = [
     {
         id: 1,
-        title: "Unindo & fortalecendo <span style='color: #F49F27;'>lideranças negras</span>",
-        subtitle: "Junte-se à Unicamp Black Network e faça parte de uma comunidade que <span style='color: #F49F27;font-weight:700'>promove a equidade, capacita jovens líderes e transforma o futuro.</span>",
-        imageUrl: "../../public/images/team-group.png"
-    },
-    {
-        id: 2,
         title: "Participe do <span style='color: #F49F27;'>Encontro com UBN 2026</span>",
         subtitle: "Venha fazer networking na maior feira negra de carreiras do país, que ocorrerá no dia 3 de junho de 2026, na Unicamp. <span style='color: #F49F27;font-weight:700;'><a href='https://www.sympla.com.br/evento/encontro-com-ubn-2026/3332320'>Para mais informações e inscrições, clique aqui</a></span>",
         imageUrl: "../../public/images/banner-encontro.png"
+    },
+    {
+        id: 1,
+        title: "Unindo & fortalecendo <span style='color: #F49F27;'>lideranças negras</span>",
+        subtitle: "Junte-se à Unicamp Black Network e faça parte de uma comunidade que <span style='color: #F49F27;font-weight:700'>promove a equidade, capacita jovens líderes e transforma o futuro.</span>",
+        imageUrl: "../../public/images/team-group.png"
     },
 ];
 
@@ -47,7 +47,6 @@ export const HeroCarousel = () => {
 
     return (
         <div className="relative w-full h-192 overflow-hidden" id="inicio">
-
             <div
                 className="w-full h-full bg-cover bg-center transition-all duration-700 ease-in-out flex items-end p-[9.4%]"
                 style={{
@@ -60,7 +59,7 @@ export const HeroCarousel = () => {
                         dangerouslySetInnerHTML={{ __html: current.title }}
                     />
                     <p
-                        className="text-[18px] opacity-90 leading-relaxed text-right w-full max-w-[80%] mt-8 md:mt-0 md:max-w-110 self-end xl:self-auto"
+                        className="max-sm:mb-[9%] text-[18px] opacity-90 leading-relaxed text-right w-full max-w-[80%] mt-8 md:mt-0 md:max-w-110 self-end xl:self-auto"
                         dangerouslySetInnerHTML={{ __html: current.subtitle }}
                     />
 
@@ -69,14 +68,14 @@ export const HeroCarousel = () => {
 
             <button
                 onClick={prevSlide}
-                className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all"
+                className="absolute left-6 top-1/2 max-sm:top-1/3 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all"
             >
                 <img src={Back} />
             </button>
 
             <button
                 onClick={nextSlide}
-                className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all"
+                className="absolute right-6 top-1/2 max-sm:top-1/3 -translate-y-1/2 w-12 h-12 rounded-full cursor-pointer bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all"
             >
                 <img src={Next} />
             </button>

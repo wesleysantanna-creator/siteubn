@@ -14,20 +14,28 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
     {
         id: 1,
-        name: "Maria Dantas",
+        name: "Isabela Dantas",
         role: "Analista na Amazon",
         quote: "O UBN segue me inspirando e me impulsionando a ir mais longe",
         description: "Fui participante, integrante e hoje faço parte da liderança. O UBN segue me inspirando e me impulsionando a ir mais longe. Foi onde aprendi a acreditar em mim, a crescer com propósito e a alcançar minha efetivação na Amazon BR.",
-        image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=400" // Exemplo de imagem
+        image: "../../public/images/impacto/dantas.png"
     },
     {
         id: 2,
-        name: "João Silva",
-        role: "Designer na Google",
-        quote: "Uma experiência transformadora em todos os sentidos",
-        description: "Consegui conectar com pessoas incríveis e expandir minha visão de mercado. A metodologia aplicada realmente prepara para os desafios reais do ambiente corporativo.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
-    }
+        name: "Ana Carolina",
+        role: "Estágio Unilever",
+        quote: "Ver histórias como a minha me deu forças para buscar meus objetivo",
+        description: "Participar do UBN é transformador. Ver histórias como a minha me deu forças para buscar meus objetivo. Conquistar meus estágios foi uma grande vitória, mas sei que nada disso seria possível sem o suporte, a ajuda e o incentive constante que recebi no UBN.",
+        image: "../../public/images/impacto/ana.png"
+    },
+    // {
+    //     id: 3,
+    //     name: "Oluwaseyi Longe",
+    //     role: "Engenheiro de Software na Magalu",
+    //     quote: "",
+    //     description: "",
+    //     image: "../../public/images/impacto/seyi.png"
+    // },
 ];
 
 export const TestimonialCard = () => {
@@ -44,9 +52,8 @@ export const TestimonialCard = () => {
     const current = testimonials[currentIndex];
 
     return (
-        <div className="rounded-3xl w-full flex flex-col md:flex-row overflow-hidden md:p-2.5 border-[#D2D4DA] border-2">
-
-            <div className="w-full md:w-74 h-99 shrink-0">
+        <div className="rounded-3xl w-full flex flex-col lg:flex-row overflow-hidden lg:p-2.5 border-[#D2D4DA] border-2">
+            <div className="w-full lg:w-74 h-99 shrink-0 max-lg:hidden">
                 <img
                     src={current.image}
                     alt={current.name}
@@ -56,18 +63,25 @@ export const TestimonialCard = () => {
 
             <div className="flex flex-col justify-between grow pl-9 pb-6 pr-8 pt-9">
                 <div>
-                    <h2 className="text-[28px] font-medium leading-9 text-black mb-6 md:max-w-[60%]">
+                    <h2 className="text-[24px] xl:text-[28px] font-medium leading-9 text-black mb-6 xl:max-w-[80%]">
                         {current.quote}
                     </h2>
-                    <p className="text-medium-black text-[20px] md:max-w-[90%]">
+                    <p className="text-medium-black text-base xl:text-[20px] md:max-w-[90%]">
                         {current.description}
                     </p>
                 </div>
 
                 <div className="flex justify-between items-end mt-8">
-                    <div>
-                        <h3 className="text-xl font-bold text-black">{current.name}</h3>
-                        <p className="text-gray-400 font-medium">{current.role}</p>
+                    <div className="flex items-center gap-4">
+                        <img
+                            src={current.image}
+                            alt={current.name}
+                            className="w-16 h-16 object-cover rounded-full lg:hidden"
+                        />
+                        <div>
+                            <h3 className="text-xl font-bold text-black">{current.name}</h3>
+                            <p className="text-gray-400 font-medium">{current.role}</p>
+                        </div>
                     </div>
 
                     <div className="flex gap-2">

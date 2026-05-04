@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import img1_2023 from "/images/ubn - 2023/1.jpg"
 import img2_2023 from "/images/ubn - 2023/2.jpg"
@@ -44,7 +43,7 @@ const timelineData: TimelineItem[] = [
     title: 'Primeiros ubn talks com paulo rufino',
     content: 'Criado durante a pandemia para inspirar e conectar talentos, o UBN Talks foi lançado e trouxe diálogos com lideranças negras de destaque no mercado, como Paulo Rufino, Robson Privado, Roberta Anchieta, Marília Lins e Willy Araújo.',
     type: 'video',
-    mediaUrl: ''
+    mediaUrl: 'https://www.youtube.com/watch?v=0kBAymclKLo&list=PLDs3aESO-0RHIFiCDZM9BqDNSB4XFIAVE&pp=0gcJCbcEOCosWNin'
   },
   {
     year: '2023',
@@ -72,156 +71,79 @@ const timelineData: TimelineItem[] = [
   },
 ];
 
+// ... (seus imports de imagem permanecem aqui)
+
 export const FastTimeline: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const { scrollTop } = document.documentElement;
-      const containerOffset = containerRef.current.offsetTop;
-      const relativeScroll = scrollTop - containerOffset;
-      const vh = window.innerHeight;
-
-      const newIndex = Math.max(0, Math.min(
-        Math.floor(relativeScroll / (vh * 1.2)),
-        timelineData.length - 1
-      ));
-
-      setActiveIndex(newIndex);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const goToIndex = (idx: number) => {
-    const targetY = containerRef.current!.offsetTop + (idx * window.innerHeight * 1.2) + 10;
-    window.scrollTo({ top: targetY, behavior: 'smooth' });
-  };
-
-  const activeItem = timelineData[activeIndex];
-
-  const renderMediaContent = () => {
-    switch (activeItem.type) {
-      case 'video':
-        return (
-          <div className="mt-8 ">
-            <p>
-              <span className="opacity-80">Confira nossa playlist de entrevistas</span>
-              <a
-                href="https://www.youtube.com/watch?v=0kBAymclKLo&list=PLDs3aESO-0RHIFiCDZM9BqDNSB4XFIAVE"
-                className="font-semibold uppercase transition-colors duration-100 hover:text-yellow"
-              > clicando aqui</a>
-            </p>
-          </div>
-        );
-      case 'gallery':
   return (
-    <div className="mt-8 flex flex-col gap-4">
-      {/* Primeira Linha */}
-      <div className="grid grid-cols-3 gap-4">
-        {activeItem.images_first_line?.map((img, idx) => (
-          <div 
-            key={`line1-${idx}`} 
-            className="aspect-5/3 overflow-hidden rounded-lg bg-white/5"
-          >
-            <img
-              src={img}
-              alt={`Galeria ${activeItem.year} - foto ${idx + 1}`}
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="bg-blue-950 text-white px-4 py-[9.4%] mt-[9.4%]" id='timeline'>
+      <div className="max-w-7xl mx-auto">
 
-      {/* Segunda Linha */}
-      <div className="grid grid-cols-3 gap-4">
-        {activeItem.images_second_line?.map((img, idx) => (
-          <div 
-            key={`line2-${idx}`} 
-            className="aspect-5/3 overflow-hidden rounded-lg bg-white/5"
-          >
-            <img
-              src={img}
-              alt={`Galeria ${activeItem.year} - foto ${idx + 4}`}
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-    }
-  };
+        {/* Cabeçalho da Seção (Opcional) */}
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-widest text-white">Nossa Trajetória</h1>
+          <div className="h-1 w-24 bg-white mx-auto mt-4 rounded-full"></div>
+        </div>
 
-  return (
-    <div ref={containerRef} id="timeline" className="relative mt-[72px] bg-blue text-white" style={{ height: `${timelineData.length * 100}vh` }}>
+        <div className="relative">
+          {/* Linha Central Vertical (Desktop) */}
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-white/20 to-transparent" />
 
-      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
-
-        <aside className="absolute left-10 md:left-24 h-[60vh] flex flex-col items-center z-100">
-          <div className="relative flex-1 flex flex-col items-center">
-            <div className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-white/20 rounded-full" />
-
-            <div className="flex flex-col justify-between h-full py-4">
-              {timelineData.map((item, i) => (
-                <button
-                  key={i}
-                  onClick={() => goToIndex(i)}
-                  className="relative z-110 flex items-center group cursor-pointer pointer-events-auto"
-                >
-                  {/* A Bolinha */}
-                  <motion.div
-                    animate={{
-                      scale: activeIndex === i ? 1.8 : 1.1,
-                      backgroundColor: activeIndex === i ? "#FFFFFF" : "#8AB2D3"
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="w-3 h-3 rounded-full"
-                  />
-
-                  <motion.span
-                    animate={{
-                      opacity: activeIndex === i ? 1 : 0.5,
-                      x: activeIndex === i ? 15 : 10,
-                      color: activeIndex === i ? "#FFFFFF" : "#8AB2D3"
-                    }}
-                    className="absolute left-full ml-2 text-sm md:text-[20px] font-semibold whitespace-nowrap"
-                  >
-                    {item.year}
-                  </motion.span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </aside>
-
-        <div className="ml-40 md:ml-80 mr-10 w-full z-10" style={{ maxWidth: activeItem.type === 'gallery' ? '1024px' : '896px' }}>
-          <AnimatePresence mode="wait">
+          {timelineData.map((item, index) => (
             <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "circOut" }}
-              className="bg-darkblue backdrop-blur-xl p-10 pt-16 rounded-[40px]"
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`relative grid grid-cols-[40px,1fr] md:grid-cols-2 gap-8 mb-16 md:mb-24 items-start ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                }`}
             >
-              <h2 className="text-[32px] font-semibold uppercase mb-4 leading-tight tracking-[5%]">
-                {activeItem.title}
-              </h2>
+              {/* Bolinha da Timeline */}
+              <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-1 flex items-center justify-center z-10">
+                <div className="w-8 h-8 rounded-full bg-blue-950 border-4 border-white flex items-center justify-center shadow-xl">
+                  <div className="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+              </div>
 
-              <div className="h-1 w-20 bg-white rounded-full mb-8" />
+              {/* Lado do Conteúdo */}
+              <div className={`col-start-2 ${index % 2 === 0 ? 'md:col-start-1 md:pr-16' : 'md:col-start-2 md:pl-16'}`}>
+                {/* Card de Ano */}
+                <div className={`inline-block bg-white text-blue-950 font-bold px-4 py-1 rounded-full text-sm mb-4 ${index % 2 === 0 ? 'md:float-right' : 'md:float-left'}`}>
+                  {item.year}
+                </div>
 
-              <p className="text-white/80 text-base leading-relaxed whitespace-pre-line max-w-[86%]">
-                {activeItem.content}
-              </p>
+                <div className="clear-both"></div>
 
-              {renderMediaContent()}
+                <h3 className="text-2xl md:text-3xl font-semibold uppercase mb-4 tracking-tight leading-tight text-white">
+                  {item.title}
+                </h3>
 
+                <p className="text-white/80 text-base md:text-lg leading-relaxed whitespace-pre-line mb-6">
+                  {item.content}
+                </p>
+
+                {/* Mídia (Galeria ou Vídeo) */}
+                {item.type === 'gallery' && (
+                  <div className={`grid grid-cols-2 gap-2 mt-4 ${index % 2 === 0 ? 'md:justify-items-end' : ''}`}>
+                    {[...(item.images_first_line || []), ...(item.images_second_line || [])].slice(0, 4).map((img, idx) => (
+                      <div key={idx} className="aspect-[5/3] overflow-hidden rounded-lg bg-white/5 border border-white/10 w-full max-w-xs">
+                        <img src={img} alt="" className="w-full h-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {item.type === 'video' && (
+                  <a href={item.mediaUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-4 text-blue-200 hover:text-white transition-colors font-medium text-sm md:text-base">
+                    ASSISTIR PLAYLIST
+                  </a>
+                )}
+              </div>
+
+              {/* Lado Vazio (Desktop) - Serve apenas para o grid */}
+              <div className="hidden md:block"></div>
             </motion.div>
-          </AnimatePresence>
+          ))}
         </div>
       </div>
     </div>
