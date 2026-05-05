@@ -54,7 +54,7 @@ const itemsFaq: AccordionItem[] = [
     {
         id: '02',
         title: 'Quando acontece o Encontro UBN?',
-        content: 'O encontro costuma acontecer anualmente, durante o mês de junho. Neste ano, 2026, ele vai acontecer no dia 3. Para mais informações acesse o sympla <a href="https://www.sympla.com.br/evento/encontro-com-ubn-2026/3332320"><b>clicando aqui</b></a>'
+        content: 'O encontro costuma acontecer anualmente, durante o mês de junho. Neste ano, 2026, ele vai acontecer no dia 10. Para mais informações acesse o sympla <a href="https://www.sympla.com.br/evento/encontro-com-ubn-2026/3332320"><b>clicando aqui</b></a>'
     },
     {
         id: '03',

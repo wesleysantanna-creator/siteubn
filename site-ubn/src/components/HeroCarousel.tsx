@@ -14,7 +14,7 @@ const slides: BannerSlide[] = [
     {
         id: 1,
         title: "Participe do <span style='color: #F49F27;'>Encontro com UBN 2026</span>",
-        subtitle: "Venha fazer networking na maior feira negra de carreiras do país, que ocorrerá no dia 3 de junho de 2026, na Unicamp. <span style='color: #F49F27;font-weight:700;'><a href='https://www.sympla.com.br/evento/encontro-com-ubn-2026/3332320'>Para mais informações e inscrições, clique aqui</a></span>",
+        subtitle: "Venha fazer networking na maior feira negra de carreiras do país, que ocorrerá no dia 10 de junho de 2026, na Unicamp. <span style='color: #F49F27;font-weight:700;'><a href='https://www.sympla.com.br/evento/encontro-com-ubn-2026/3332320'>Para mais informações e inscrições, clique aqui</a></span>",
         imageUrl: "/images/banner-encontro.png"
     },
     {
