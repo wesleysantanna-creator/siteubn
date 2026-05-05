@@ -28,14 +28,14 @@ const testimonials: Testimonial[] = [
         description: "Participar do UBN é transformador. Ver histórias como a minha me deu forças para buscar meus objetivo. Conquistar meus estágios foi uma grande vitória, mas sei que nada disso seria possível sem o suporte, a ajuda e o incentive constante que recebi no UBN.",
         image: "/images/impacto/ana.png"
     },
-    // {
-    //     id: 3,
-    //     name: "Oluwaseyi Longe",
-    //     role: "Engenheiro de Software na Magalu",
-    //     quote: "",
-    //     description: "",
-    //     image: "../../public/images/impacto/seyi.png"
-    // },
+    {
+        id: 3,
+        name: "Oluwaseyi Longe",
+        role: "Engenheiro de Software na Magalu",
+        quote: "A UBN foi, para mim, uma ponte importante para me conectar com pessoas que compartilham valores e visões semelhantes",
+        description: "Mais do que isso, foi um espaço onde consegui me aproximar da causa negra de uma forma que realmente faz sentido para o meu perfil: com foco em ações concretas e no empoderamento por meio da educação e do trabalho. É um lugar onde sinto que realmente estou fazendo diferença!",
+        image: "/images/impacto/seyi.png"
+    },
 ];
 
 export const TestimonialCard = () => {
