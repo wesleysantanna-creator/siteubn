@@ -76,7 +76,7 @@ const mentoresData: Mentor[] = [
         id: 10,
         name: "Felipe de Sá",
         role: "Data Product Manager",
-        imageUrl: "/images/mentores/FelipedeSa.jpg",
+        imageUrl: "/images/mentores/FelipeDeSa.jpg",
         linkedinUrl: "https://www.linkedin.com/in/felipe-daniel"
     },
     {
