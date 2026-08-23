@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import History from './pages/History'
+import Mentoria from './pages/Mentoria'
 import Navbar from './components/Navbar'
 
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
+        <Route path="/mentoria" element={<Mentoria />} />
       </Routes>
     </div>
   )
