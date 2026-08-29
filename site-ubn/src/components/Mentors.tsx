@@ -33,9 +33,9 @@ const mentoresData: Mentor[] = [
     {
         id: 4,
         name: "Anderson Luiz",
-        role: "---",
+        role: "AI Engineer",
         imageUrl: "/images/mentores/AndersonLuiz.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/andluizsouza/"
     },
     {
         id: 5,
@@ -44,26 +44,26 @@ const mentoresData: Mentor[] = [
         imageUrl: "/images/mentores/CaioFelipe.jpg",
         linkedinUrl: "https://www.linkedin.com/in/caio-felipe-57275516a/"
     },
-    {
-        id: 6,
-        name: "Carlos Eduardo",
-        role: "---",
-        imageUrl: "/images/mentores/CarlosEduardo.jpg",
-        linkedinUrl: "https://linkedin.com"
-    },
+    // {
+    //     id: 6,
+    //     name: "Carlos Eduardo",
+    //     role: "---",
+    //     imageUrl: "/images/mentores/CarlosEduardo.jpg",
+    //     linkedinUrl: "https://linkedin.com"
+    // },
     {
         id: 7,
-        name: "Carlos (Cacau)",
-        role: "---",
+        name: "Carlos Cacau",
+        role: "Sales Leader",
         imageUrl: "/images/mentores/CarlosCacau.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/ocacausilva"
     },
     {
         id: 8,
         name: "Caroline",
-        role: "---",
+        role: "Strategic Finance",
         imageUrl: "/images/mentores/Caroline.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/caroline-nascimento-dos-santos/"
     },
     {
         id: 9,
@@ -82,9 +82,9 @@ const mentoresData: Mentor[] = [
     {
         id: 11,
         name: "Fernando",
-        role: "---",
+        role: "Data Engineer",
         imageUrl: "/images/mentores/Fernando.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/fernandolucasaa/"
     },
     {
         id: 12,
@@ -109,10 +109,10 @@ const mentoresData: Mentor[] = [
     },
     {
         id: 15,
-        name: "Gustavo Mentor",
-        role: "---",
+        name: "Gustavo Moreira",
+        role: "Chicago Booth MBA",
         imageUrl: "/images/mentores/GustavoMentor.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/gustavo-moreira-099084169/"
     },
     {
         id: 16,
@@ -152,37 +152,37 @@ const mentoresData: Mentor[] = [
     {
         id: 21,
         name: "Nathalia Dias",
-        role: "---",
+        role: "Estrategy & Ops",
         imageUrl: "/images/mentores/NathaliaDias.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/nathalia-dias-silva-913792105"
     },
     {
         id: 22,
         name: "Rodrigo Silva",
-        role: "---",
+        role: "Head of Marketing",
         imageUrl: "/images/mentores/RodrigoSilva.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/rodrigo-araujo-marketing/"
     },
     {
         id: 23,
         name: "Roger Alves",
-        role: "---",
-        imageUrl: "/images/mentores/RogerAlves.jpg",
-        linkedinUrl: "https://linkedin.com"
+        role: "Executive Search",
+        imageUrl: "/images/mentores/RogerAlvesNew.jpeg",
+        linkedinUrl: "https://www.linkedin.com/in/rogeralvesgalvao?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     },
     {
         id: 24,
         name: "Rogério Lúcio",
-        role: "---",
+        role: "Head of Technology",
         imageUrl: "/images/mentores/RogerioLucio.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/rogerioluciosilva/"
     },
     {
         id: 25,
         name: "Ronaldo",
-        role: "---",
+        role: "McKinsey Consultant",
         imageUrl: "/images/mentores/Ronaldo.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/ronaldo-fernandes-55650617b?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
         id: 26,
@@ -194,9 +194,9 @@ const mentoresData: Mentor[] = [
     {
         id: 27,
         name: "Sthefany Silva",
-        role: "---",
+        role: "Fiscalizações",
         imageUrl: "/images/mentores/SthefanySilva.jpg",
-        linkedinUrl: "https://linkedin.com"
+        linkedinUrl: "https://www.linkedin.com/in/stefany-silva-47728614a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
         id: 28,
@@ -219,13 +219,13 @@ const mentoresData: Mentor[] = [
         imageUrl: "/images/mentores/Virgginia.jpg",
         linkedinUrl: "https://www.linkedin.com/in/virgginialaborao/"
     },
-    {
-        id: 31,
-        name: "Wanderson",
-        role: "---",
-        imageUrl: "/images/mentores/Wanderson.jpg",
-        linkedinUrl: "https://linkedin.com"
-    },
+    // {
+    //     id: 31,
+    //     name: "Wanderson",
+    //     role: "---",
+    //     imageUrl: "/images/mentores/Wanderson.jpg",
+    //     linkedinUrl: "https://linkedin.com"
+    // },
     {
         id: 32,
         name: "Yuri Lopes",

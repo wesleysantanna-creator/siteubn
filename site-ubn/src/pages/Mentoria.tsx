@@ -1,6 +1,6 @@
 import { Accordion, type AccordionItem } from "../components/Accordion";
 import Footer from "../components/Footer";
-// import { Mentors } from "../components/Mentors";
+import { Mentors } from "../components/Mentors";
 import { MentorshipJourney } from "../components/MentorshipJourney";
 
 export default function Mentoria() {
@@ -145,7 +145,7 @@ export default function Mentoria() {
                 </div>
             </div>
 
-            {/* <Mentors /> */}
+            <Mentors />
             <MentorshipJourney />
 
             <div className="flex flex-col xl:flex-row px-[5%] lg:px-[9.4%] py-[15%] pt-[5%] lg:pt-[9.4%] mt-[15%] lg:mt-[9.4%] gap-12 relative bg-terracotta xl:h-208 justify-between" id="nossasacoes">
