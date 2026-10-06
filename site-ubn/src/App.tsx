@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import History from './pages/History'
 import Mentoria from './pages/Mentoria'
 import Navbar from './components/Navbar'
-
+import Certificado from './pages/Certificado'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
         <Route path="/mentoria" element={<Mentoria />} />
+        <Route path="/certificado" element={<Certificado />} />
       </Routes>
     </div>
   )
