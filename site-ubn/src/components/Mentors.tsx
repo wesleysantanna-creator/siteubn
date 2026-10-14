@@ -53,7 +53,7 @@ const mentoresData: Mentor[] = [
     // },
     {
         id: 7,
-        name: "Carlos Cacau",
+        name: "Carlos Roberto da Silva",
         role: "Sales Leader",
         imageUrl: "/images/mentores/CarlosCacau.jpg",
         linkedinUrl: "https://www.linkedin.com/in/ocacausilva"
@@ -86,13 +86,13 @@ const mentoresData: Mentor[] = [
         imageUrl: "/images/mentores/Fernando.jpg",
         linkedinUrl: "https://www.linkedin.com/in/fernandolucasaa/"
     },
-    {
-        id: 12,
-        name: "Filipe Rocha",
-        role: "Digital Transformation",
-        imageUrl: "/images/mentores/FilipeRocha.jpg",
-        linkedinUrl: "https://www.linkedin.com/in/filipersilva/"
-    },
+    // 
+    //     id: 12,
+    //     name: "Filipe Rocha",
+    //     role: "Digital Transformation",
+    //     imageUrl: "/images/mentores/FilipeRocha.jpg",
+    //     linkedinUrl: "https://www.linkedin.com/in/filipersilva/"
+    // ,
     {
         id: 13,
         name: "Glauce De Assis",

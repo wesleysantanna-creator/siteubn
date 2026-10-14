@@ -10,14 +10,14 @@ interface Encontro {
 const ANO_CICLO = 2026;
 
 const encontrosData: Encontro[] = [
-    { id: 1, titulo: "Encontro 1", dataInicio: new Date(ANO_CICLO, 6, 12), dataFim: new Date(ANO_CICLO, 7, 11) },
-    { id: 2, titulo: "Encontro 2", dataInicio: new Date(ANO_CICLO, 7, 12), dataFim: new Date(ANO_CICLO, 8, 11) },
-    { id: 3, titulo: "Encontro 3", dataInicio: new Date(ANO_CICLO, 8, 12), dataFim: new Date(ANO_CICLO, 9, 11) },
-    { id: 4, titulo: "Encontro 4", dataInicio: new Date(ANO_CICLO, 9, 12), dataFim: new Date(ANO_CICLO, 10, 11) },
-    { id: 5, titulo: "Encontro 5", dataInicio: new Date(ANO_CICLO, 10, 12), dataFim: new Date(ANO_CICLO, 11, 12) },
+    { id: 1, titulo: "Encontro 1", dataInicio: new Date(ANO_CICLO, 7, 14), dataFim: new Date(ANO_CICLO, 8, 14) },
+    { id: 2, titulo: "Encontro 2", dataInicio: new Date(ANO_CICLO, 8, 14), dataFim: new Date(ANO_CICLO, 9, 14) },
+    { id: 3, titulo: "Encontro 3", dataInicio: new Date(ANO_CICLO, 9, 14), dataFim: new Date(ANO_CICLO, 10, 14) },
+    { id: 4, titulo: "Encontro 4", dataInicio: new Date(ANO_CICLO, 10, 14), dataFim: new Date(ANO_CICLO, 11, 14) },
+    { id: 5, titulo: "Encontro 5", dataInicio: new Date(ANO_CICLO, 11, 14), dataFim: new Date(ANO_CICLO + 1, 0, 28) },
 ];
 
-const MESES = ["JUL", "AGO", "SET", "OUT", "NOV", "DEZ"];
+const MESES = ["AGO", "SET", "OUT", "NOV", "DEZ", "JAN"];
 const COR_ESCURA = "#7A1C1C";
 const COR_CLARA = "#F9E5E1";
 
@@ -35,8 +35,8 @@ function getStatus(hoje: Date, inicio: Date, fim: Date): Status {
 
 /** ---------- Cronograma: versão desktop (linha do tempo por mês) ---------- */
 function CronogramaDesktop({ hoje }: { hoje: Date }) {
-    const inicioTimeline = useMemo(() => new Date(ANO_CICLO, 6, 1), []);
-    const fimTimeline = useMemo(() => new Date(ANO_CICLO, 11, 31), []);
+    const inicioTimeline = useMemo(() => new Date(ANO_CICLO, 7, 1), []);
+    const fimTimeline = useMemo(() => new Date(ANO_CICLO + 1, 0, 31), []);
     const totalMs = fimTimeline.getTime() - inicioTimeline.getTime();
 
     const paraPercentual = (data: Date) =>
