@@ -69,10 +69,10 @@ export function formatarHoras(horas: number): string {
 const TEMPLATE_URL = '/modelo-certificado.pdf'
 
 const POSICAO = {
-  titulo: 0.66,
-  introducao: 0.56,
-  nome: 0.48,
-  corpo: 0.4,
+  titulo: 0.76,
+  introducao: 0.66,
+  nome: 0.58,
+  corpo: 0.5,
 }
 
 function quebrarLinhas(
