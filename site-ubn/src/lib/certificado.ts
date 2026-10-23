@@ -46,12 +46,14 @@ export function calcularCargaHoraria(
   lastCheckin: string,
 ): number {
   const inicio = parseCheckin(firstCheckin)
-  const ultimo = parseCheckin(lastCheckin)
+  const fim = parseCheckin(lastCheckin)
 
-  if (Number.isNaN(inicio) || Number.isNaN(ultimo)) return 0
+  if (Number.isNaN(inicio) || Number.isNaN(fim)) return 0
 
-  const fimArredondado = Math.ceil(ultimo / MEIA_HORA_MS) * MEIA_HORA_MS
-  return Math.max(0, (fimArredondado - inicio) / HORA_MS)
+  const duracao = fim - inicio
+  if (duracao <= 0) return 0
+
+  return (Math.ceil(duracao / MEIA_HORA_MS) * MEIA_HORA_MS) / HORA_MS
 }
 
 export function formatarHoras(horas: number): string {
