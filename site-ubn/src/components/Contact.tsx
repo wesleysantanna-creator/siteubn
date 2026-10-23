@@ -75,7 +75,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4" id='facaparte'>
+    <div className="flex items-center justify-center p-4 pt-[5%] lg:pt-[9.4%]" id='facaparte'>
       <div className="flex flex-col lg:flex-row lg:p-3 w-full max-w-6xl bg-white rounded-3xl border-2 border-[#D2D4DA] overflow-hidden">
 
         <div className="relative flex flex-col justify-between p-9 lg:p-12 bg-[#1b5fa1] text-white lg:w-2/5 lg:rounded-xl">
@@ -93,7 +93,7 @@ export default function Contact() {
           <div className="mt-12 z-10">
             <p className="mb-6 text-base">
               <span className="opacity-70">Você também pode entrar em contato através das nossas redes sociais ou pelo nosso e-mail </span>
-              <span className="font-bold">ubn@redeubn.org</span>
+              <span className="font-bold">unicampblacknetwork@gmail.com</span>
             </p>
             <div className="flex gap-3">
               {links.map((item) => (
@@ -107,7 +107,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="ml-3 p-8 lg:p-9 lg:w-3/5">
+        <div className="lg:ml-3 p-8 lg:p-9 lg:w-3/5">
           <div className="flex bg-white rounded-xl mb-8 w-full border border-[#DBDDE4]">
             <button
               onClick={() => setIsCompany(true)}

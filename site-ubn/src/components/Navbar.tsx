@@ -8,14 +8,14 @@ export default function Navbar() {
   const [activeId, setActiveId] = useState('inicio')
 
   const navLinks = [
-    { name: 'INÍCIO', href: '#inicio' },
-    { name: 'QUEM SOMOS', href: '#quemsomos' },
-    { name: 'AÇÕES', href: '#nossasacoes' },
-    { name: 'IMPACTOS', href: '#impactos' },
-    { name: 'PARCEIROS', href: '#parceiros' },
-    { name: 'LINHA DO TEMPO', href: '#timeline' },
-    // { name: 'EQUIPE', href: '#equipe' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'INÍCIO', href: '/#inicio' },
+    { name: 'QUEM SOMOS', href: '/#quemsomos' },
+    { name: 'AÇÕES', href: '/#nossasacoes' },
+    { name: 'IMPACTOS', href: '/#impactos' },
+    { name: 'PARCEIROS', href: '/#parceiros' },
+    { name: 'LINHA DO TEMPO', href: '/#timeline' },
+    { name: 'FAQ', href: '/#faq' },
+    { name: 'MENTORIA', href: '/mentoria' },
   ]
 
   useEffect(() => {

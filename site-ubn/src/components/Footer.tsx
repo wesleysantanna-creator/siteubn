@@ -13,7 +13,7 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="w-full bg-darkbrown text-white poppins-sans">
+        <footer className="w-full bg-darkbrown text-white poppins-sans mt-[5%] lg:mt-[9.4%]">
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
 
@@ -42,7 +42,7 @@ export default function Footer() {
                         <section>
                             <h3 className="poppins-bold mb-2">Contatos</h3>
                             <p className="text-sm text-gray-300">+55 (11) 9 5826-0879</p>
-                            <p className="text-sm text-gray-300">ubn@redeubn.org</p>
+                            <p className="text-sm text-gray-300">unicampblacknetwork@gmail.com</p>
                         </section>
 
                         <section>
