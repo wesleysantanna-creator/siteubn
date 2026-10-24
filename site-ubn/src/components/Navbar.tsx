@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 import LogoUBN from '/images/ubn-logo-black.svg'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  // Estado para armazenar qual ID está ativo no momento
-  const [activeId, setActiveId] = useState('inicio')
+  const { pathname } = useLocation()
+  const [activeId, setActiveId] = useState(
+    pathname === '/' ? 'inicio' : pathname.replace('/', ''),
+  )
 
   const navLinks = [
+    { name: 'CERTIFICADOS', href: '/certificado' }, // <--- ROTA ATUALIZADA AQUI
     { name: 'INÍCIO', href: '/#inicio' },
     { name: 'QUEM SOMOS', href: '/#quemsomos' },
     { name: 'AÇÕES', href: '/#nossasacoes' },
@@ -35,11 +39,12 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observa todas as seções que correspondem aos nossos links
     navLinks.forEach((link) => {
-      const sectionId = link.href.replace('#', '');
-      const element = document.getElementById(sectionId);
-      if (element) observer.observe(element);
+      if (link.href.includes('#')) {
+        const sectionId = link.href.replace('/#', '').replace('#', '');
+        const element = document.getElementById(sectionId);
+        if (element) observer.observe(element);
+      }
     });
 
     // Observa também a seção "Faça Parte" para manter a lógica consistente
@@ -57,7 +62,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
-              const id = link.href.replace('#', '');
+              const id = link.href.replace('/#', '').replace('#', '').replace('/', '');
               const isActive = activeId === id;
 
               return (
@@ -77,7 +82,7 @@ export default function Navbar() {
             })}
 
             <a
-              href="#facaparte"
+              href="/#facaparte"
               onClick={() => setActiveId('facaparte')}
               className={`text-[12px] ml-4 px-6 py-3 border-2 border-terracotta font-semibold rounded-xl transition-all duration-300 ${
                 activeId === 'facaparte' 
@@ -105,7 +110,7 @@ export default function Navbar() {
       <div className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <div className="px-4 pt-2 pb-6 space-y-2 bg-white border-t border-gray-100 shadow-[0px_4px_10px_rgba(0,0,0,0.15)]">
           {navLinks.map((link) => {
-            const id = link.href.replace('#', '');
+            const id = link.href.replace('/#', '').replace('#', '').replace('/', '');
             const isActive = activeId === id;
 
             return (
@@ -124,7 +129,7 @@ export default function Navbar() {
           })}
           <div className="pt-4">
             <a 
-              href="#facaparte"
+              href="/#facaparte"
               onClick={() => {
                 setActiveId('facaparte');
                 setIsOpen(false);
